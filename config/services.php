@@ -20,6 +20,10 @@ return [
         'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
     ],
 
+    'openweather' => [
+        'api_key' => env('OPENWEATHER_KEY')
+    ],
+
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],

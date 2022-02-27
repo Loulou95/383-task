@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Modules\OpenWeatherApiModule\OpenWeatherApiService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
+
     /**
      * Create a new controller instance.
      *
@@ -25,4 +29,5 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
 }
