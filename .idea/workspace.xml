@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e908acfe-210f-46e6-9a3d-ac3465f64f8d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Queries/UserQuery.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/user-list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/OpenWeatherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/OpenWeatherController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Modules/OpenWeatherApiModule/OpenWeatherApiService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Modules/OpenWeatherApiModule/OpenWeatherApiService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +139,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../weatherApp2" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -156,7 +163,7 @@
       <option name="presentableId" value="Default" />
       <updated>1645961477166</updated>
       <workItem from="1645961479903" duration="33856000" />
-      <workItem from="1646075034335" duration="29481000" />
+      <workItem from="1646075034335" duration="40245000" />
     </task>
     <servers />
   </component>

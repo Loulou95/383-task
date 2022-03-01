@@ -33,7 +33,7 @@ class OpenWeatherController extends Controller
 
         return view('/welcome', [
             'currentForecast' => $currentForecast,
-            'weeklyForecast' => $weeklyForecast['daily'],
+            'weeklyForecast' => $weeklyForecast,
             'searchString' => $searchString
         ]);
     }

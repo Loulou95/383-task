@@ -26,5 +26,9 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/', 'OpenWeatherController@index')->name('home');
         Route::post('/', 'OpenWeatherController@index')->name('search.location');
     });
+
+    Route::group(['namespace' => 'User'], function () {
+        Route::get('/get-users', 'UserListController@index')->name('user.list');
+    });
 });
 

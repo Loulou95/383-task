@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .wrapper {
     width: 300px;
     padding: 10px;

@@ -39,8 +39,8 @@ class OpenWeatherApiService
         $longitude = $currentForecast['coord']['lon'];
         $latitude = $latitude = $currentForecast['coord']['lat'];
         $fullUrl = Http::get("https://api.openweathermap.org/data/2.5/onecall?lat={$latitude}&lon={$longitude}&appid={$apiKey}&units=metrics");
-
-        return $fullUrl->json();
+        $fullUrl = $fullUrl['daily'];
+        return $fullUrl;
     }
 
     public function searchByLocation($request) {
