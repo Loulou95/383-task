@@ -25,7 +25,9 @@ class OpenWeatherController extends Controller
 
         if($searchString) {
             try {
-                $currentForecast = $this->openWeatherApiService->searchByLocation($request);
+                $searchForecast = $this->openWeatherApiService->searchByLocation($request);
+                $currentForecast = $searchForecast[0]['currentForecast'];
+                $weeklyForecast = $searchForecast[0]['weeklyForecast'];
             }catch (\Exception $e) {
                 return $e->getMessage();
             }

@@ -52,8 +52,16 @@ class OpenWeatherApiService
             $location = $string;
         }
         $baseUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
-        $response = Http::get("{$baseUrl}{$location}&appid={$apiKey}&units=metrics");
-
-        return $response->json();
+        $currentForecast = Http::get("{$baseUrl}{$location}&appid={$apiKey}&units=metrics");
+        $longitude = $currentForecast['coord']['lon'];
+        $latitude = $latitude = $currentForecast['coord']['lat'];
+        $weeklyForecast = Http::get("https://api.openweathermap.org/data/2.5/onecall?lat={$latitude}&lon={$longitude}&appid={$apiKey}&units=metrics");
+        $weeklyForecast = $weeklyForecast['daily'];
+        $data = array([
+            'weeklyForecast' => $weeklyForecast,
+            'currentForecast' => $currentForecast->json(),
+        ]);
+        return $data;
     }
+
 }
