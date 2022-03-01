@@ -22,31 +22,33 @@
                             @endif
                         <div class="">
                             <div class="card">
-                                <form action="{{url('search')}}" method="post" class="form-group">
+                                <form  action="{{ route('search.location') }}" method="post" class="form-group">
                                     @csrf
-                                    <input type="text" name="location" class="form-control">
-                                    <button type="submit">Search</button>
+                                    <input type="search" id="address" placeholder="Enter a new location" name="searchString" value="{{$searchString}}"/>
+                                    <p>Selected: <strong id="address-value">none</strong></p>
+                                    <input value="Search" type="submit" />
                                 </form>
-
-                                <div style="display: flex; justify-content: space-between; align-items: center;">
-                                    <h2>
-                                        {{ $currentForecast['name'] }}
-                                    </h2>
-                                </div>
+<!--                                <v-form></v-form>-->
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <h2>
+                                            {{ $currentForecast['name'] }}
+                                        </h2>
+                                    </div>
                                 <h1>{{ round($currentForecast['main']['temp']) }}°</h1>
                                 <p>{{$currentForecast['weather'][0]['description']}}</p>
                                 <table>
                                     <tr>
                                         @foreach($weeklyForecast as $weather )
                                             <td>
-                                                <div class="text-gray-400">{{(strtoupper(\Carbon\Carbon::createFromTimestamp($weather['dt'])->format('D')))}}</div>
+                                                <p class="text-gray-400">{{(strtoupper(\Carbon\Carbon::createFromTimestamp($weather['dt'])->format('D')))}}</p>
+                                                <button class="pinit_button">Show weather</button>
                                             </td>
                                         @endforeach
                                     </tr>
                                     <tr>
                                         @foreach($weeklyForecast as $weather )
                                             <td>
-                                                <div class="text-gray-400">{{$weather['weather'][0]['description']}}</div>
+                                                <div id="pinit_menu">{{$weather['weather'][0]['description']}} src: <span id="src"></div>
                                             </td>
                                         @endforeach
                                     </tr>
@@ -54,6 +56,7 @@
                                 <a href="{{ route('home') }}" style="display:block; text-align: center; padding: 10px; border-radius: 5px; width: 20%; margin: 30px auto; color: white; background-color: #1a202c; text-decoration: none;">
                                     Back
                                 </a>
+
                             </div>
                         </div>
 

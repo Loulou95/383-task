@@ -17,14 +17,24 @@ class OpenWeatherController extends Controller
         $this->openWeatherApiService = new OpenWeatherApiService();
     }
 
-    public function index() {
+    public function index(Request $request) {
 
         $currentForecast = $this->openWeatherApiService->currentForecast();
         $weeklyForecast = $this->openWeatherApiService->weeklyForecast();
+        $searchString = $request->searchString;
+
+        if($searchString) {
+            try {
+                $currentForecast = $this->openWeatherApiService->searchByLocation($request);
+            }catch (\Exception $e) {
+                return $e->getMessage();
+            }
+        }
 
         return view('/welcome', [
             'currentForecast' => $currentForecast,
-            'weeklyForecast' => $weeklyForecast['daily']
+            'weeklyForecast' => $weeklyForecast['daily'],
+            'searchString' => $searchString
         ]);
     }
 }

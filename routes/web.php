@@ -16,11 +16,15 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('/home', function () {
+    return view('home');
+});
+
 
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['namespace' => 'Api'], function () {
         Route::get('/', 'OpenWeatherController@index')->name('home');
-        Route::post('search', 'OpenWeatherController@getUserWeatherForcast');
+        Route::post('/', 'OpenWeatherController@index')->name('search.location');
     });
 });
 

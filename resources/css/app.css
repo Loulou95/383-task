@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.wrapper {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.content {
+    width: 0px;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.toggled {
+    width: 100%;
+}
+
+.toggle {
+    cursor: pointer;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.auth__link {
+    margin-top: 4px;
+}
+
+.theme-social-btn {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
+    box-sizing: border-box;
+}
+
+.theme-google-btn {
+    background-color: #ea4335;
+}
+
+.theme-form-divider {
+    color: rgb(107, 119, 140);
+    padding-top: 16px;
+    margin-top: 32px;
+    border-top: 1px solid rgb(213, 216, 222);
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+}
+
+.theme-register-section {
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto 24px;
+    padding: 32px 40px;
+    background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px;
+    box-sizing: border-box;
+    color: rgb(94, 108, 132);
+}
+
+.error-block {
+    color: #ce4343;
+    font-size: 11.6px;
+    margin-top: 8px !important;
+}
+
+.inner-section {
+    width: 100%;
+    padding: 0px;
+    overflow: visible;
+    margin-bottom: 30px;
+}
+
+
+.checkbox-text {
+    margin-top: -20px;
+}
+
+.theme-form-fields {
+    width: 100%;
+    max-width: 400px;
+    font-size: 14px;
+    background-color: #FAFBFC;
+    border: 2px solid #DFE1E6;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 3px;
+    height: 44px;
+    padding: .5em;
+    transition: background-color .2s ease-in-out 0s,border-color .2s ease-in-out 0s;
+}
+
+.theme-signup-form {
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    padding: 25px 40px;
+    box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+    isplay: block;
+    max-width: 585px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.theme__get__started {
+    font-size: 14px;
+    padding: 8px 16px;
+    font-weight: 300;
+    background-color: #4353FF;
+    color: #fff;
+    border-radius: 2rem;
+    font-family: "Poppins", sans-serif !important;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+nav {
+    font-family: "Poppins", sans-serif;
+}
+
+
+.line {
+    height: 2px;
+    width: 35px;
+    margin: 0.5rem 0;
+    background: #daf8e3;
+    transition: transform 0.75s ease, opacity 0.75s ease;
+}
+
+.ham {
+    /* keep the hamburger button above everything */
+    z-index: 100;
+    display: none;
+    top: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+}
+
+.xIcon {
+    display: none;
+}
+
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    color: #535768;
+    transform: translateY(-100%);
+    transition: transform 0.2s;
+    list-style: none;
+    padding: 10px 32px 80px;
+}
+
+
+.showMenu {
+    transform: translateY(0);
+}
+
+li {
+    padding: 1rem 0;
+}
+
+.menuLink {
+    display: inline;
+    font-size: 20px;
+    color: #535768;
+    text-decoration: none;
+}
+
+.menuLink:hover {
+    text-decoration: none;
+}
+
+
+
+@media screen and (max-width: 800px){
+    .theme-mobile-menu {
+        display: block;
+    }
+}
+
+@media (max-width: 800px) {
+    .theme-desktop-menu {
+        display: none;
+    }
+}
+
+.v-main{
+    background-color: white;
+}
+

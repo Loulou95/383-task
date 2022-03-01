@@ -1,64 +1,64 @@
-@extends('layouts.app')
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
-                   @if(Auth::user()->is_admin)
-                            <p>This is an admin account</p>
-                        @else
-                            <p>this is a normal account</p>
-                        @endif
-                        <div class="">
-                            <div class="card">
-                                <form action="{{url('search')}}" method="post" class="form-group">
-                                    @csrf
-                                    <input type="text" name="location" class="form-control">
-                                    <button type="submit">Search</button>
-                                </form>
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
-                                <div style="display: flex; justify-content: space-between; align-items: center;">
-                                    <h2>
-                                        {{ $currentForecast['name'] }}
-                                    </h2>
-                                </div>
-                                <h1>{{ round($currentForecast['main']['temp']) }}°</h1>
-                                <p>{{$currentForecast['weather'][0]['description']}}</p>
-                                <table>
-                                    <tr>
-                                        @foreach($weeklyForecast as $weather )
-                                            <td>
-                                                <div class="text-gray-400">{{(strtoupper(\Carbon\Carbon::createFromTimestamp($weather['dt'])->format('D')))}}</div>
-                                            </td>
-                                        @endforeach
-                                    </tr>
-                                    <tr>
-                                        @foreach($weeklyForecast as $weather )
-                                            <td>
-                                                <div class="text-gray-400">{{$weather['weather'][0]['description']}}</div>
-                                            </td>
-                                        @endforeach
-                                    </tr>
-                                </table>
-                                <a href="{{ route('home') }}" style="display:block; text-align: center; padding: 10px; border-radius: 5px; width: 20%; margin: 30px auto; color: white; background-color: #1a202c; text-decoration: none;">
-                                    Back
-                                </a>
-                            </div>
-                        </div>
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-                </div>
-            </div>
-        </div>
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">Hidden content</div>
+        <div class="toggle">Click</div>
     </div>
-</div>
-@endsection
+
+    <div class="wrapper">
+        <div class="content">Hidden content</div>
+        <div class="toggle">Click</div>
+    </div>
+
+    <div class="wrapper">
+        <div class="content">Hidden content</div>
+        <div class="toggle">Click</div>
+    </div>
+
+    <div class="wrapper">
+        <div class="content">Hidden content</div>
+        <div class="toggle">Click</div>
+    </div>
+
+    <div class="wrapper">
+        <div class="content">Hidden content</div>
+        <div class="toggle">Click</div>
+    </div>
+
+    <div class="wrapper">
+        <div class="content">Hidden content</div>
+        <div class="toggle">Click</div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.wrapper').forEach(el => {
+            el.addEventListener('click', e => {
+                if(e.target.classList.contains('toggle')) el.querySelector('.content').classList.toggle('toggled');
+            });
+        })
+    </script>
+
+</body>

@@ -2,89 +2,58 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+    <section class="inner-section">
+        <div class="theme-register-section text-center mt-5 lg:w-96">
+            <p class="text-gray-500 font-bold">Signup</p>
+            <div class="theme-signup-form-inner mt-5">
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
+                    <input type="text" placeholder="Name" class="theme-form-fields" name="name" @error('name') is-invalid @enderror>
+                    @error('name')
+                    <span class="error-block" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                    @enderror
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+                    <input type="text" placeholder="Email" class="theme-form-fields mt-5" name="email">
+                    @error('email')
+                    <span class="error-block" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                    @enderror
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                    <input type="text" placeholder="Location" class="theme-form-fields mt-5" name="location">
+                    @error('location')
+                    <span class="error-block" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                    @enderror
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                    <input type="password" placeholder="Create password" class="theme-form-fields mt-5 @error('password') is-invalid @enderror" name="password" required>
+                    @error('password')
+                    <span class="error-block" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                    @enderror
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                    <input type="password" placeholder="Confirm password" class="theme-form-fields mt-5 @error('password') is-invalid @enderror" name="password_confirmation" required>
+                    @error('password')
+                    <span class="error-block" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                    @enderror
+                    <button class="rounded-sm bg-blue-700 text-white w-full mt-5 p-2">
+                        Sign up
+                    </button>
+                </form>
+                <div class="theme-form-divider mt-5">
+                </div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Location') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="location" type="location" class="form-control @error('location') is-invalid @enderror" name="location" value="{{ old('location') }}" required autocomplete="location">
-
-                                @error('location')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                <div class="text-center mt-2">
+                    <a href="login" class="text-xs checkbox-text text-blue-600">Already have a task-tracker account? Log in</a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </div>
 @endsection
