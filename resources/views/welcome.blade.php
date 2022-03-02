@@ -32,7 +32,7 @@
                                                         <div class="flex mb-4 justify-between items-center">
                                                             <div>
                                                                 <h5 class="mb-0 font-medium text-xl">{{ $currentForecast['name'] }}</h5>
-                                                                <h6 class="mb-0"> <p class="text-gray-400">{{(strtoupper(\Carbon\Carbon::createFromTimestamp($currentForecast['dt'])->format('D M Y')))}}</p></h6><small>Cloudy</small>
+                                                                <h6 class="mb-0"> <p class="text-gray-400">{{(strtoupper(\Carbon\Carbon::createFromTimestamp($currentForecast['dt'])->format('D M Y')))}}</p></h6><small>{{$currentForecast['weather'][0]['description']}}</small>
                                                             </div>
                                                             <div class="text-right">
                                                                 <h3 class="font-bold text-4xl mb-0"><span>{{ round($currentForecast['main']['temp']) }}°</span></h3>
@@ -63,10 +63,10 @@
                                                                         <span class="toggle my-1">{{(strtoupper(\Carbon\Carbon::createFromTimestamp($weather['dt'])->format('D')))}}</span>
                                                                     </div>
                                                                     <div class="content">
-                                                                        <div class="">
-                                                                            <img src="http://openweathermap.org/img/wn/{{ $weather['weather'][0]['icon'] }}@2x.png" alt="icon"  class="w-8 h-8">
+                                                                        <div class="" style="width: 100px; margin: 0 auto;">
+                                                                            <img src="http://openweathermap.org/img/wn/{{ $weather['weather'][0]['icon'] }}@2x.png" alt="icon" class="">
+                                                                            <p class="my-1">{{$weather['weather'][0]['description']}}</p>
                                                                         </div>
-                                                                        <p class="my-1">{{$weather['weather'][0]['description']}}</p>
                                                                     </div>
                                                                 </div>
                                                             @endforeach

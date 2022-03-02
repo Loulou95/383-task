@@ -32224,8 +32224,6 @@ video {
 .wrapper {
   padding: 10px;
   margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
   border: 1px solid black;
 }
 
@@ -32234,6 +32232,10 @@ video {
   overflow: hidden;
   white-space: nowrap;
   transition: 0.3s;
+}
+
+.hide-item {
+  display: none;
 }
 
 .toggled {
