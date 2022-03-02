@@ -28,7 +28,7 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
     Route::group(['namespace' => 'User'], function () {
-        Route::get('/get-users', 'UserListController@index')->name('user.list');
+        Route::get('/list-of-users', 'UserListController@index')->name('user.list')->middleware('supper.admin');
     });
 });
 
