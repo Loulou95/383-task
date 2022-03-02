@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/weather.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -52,13 +53,5 @@
         <div class="content">Hidden content</div>
         <div class="toggle">Click</div>
     </div>
-
-    <script>
-        document.querySelectorAll('.wrapper').forEach(el => {
-            el.addEventListener('click', e => {
-                if(e.target.classList.contains('toggle')) el.querySelector('.content').classList.toggle('toggled');
-            });
-        })
-    </script>
 
 </body>

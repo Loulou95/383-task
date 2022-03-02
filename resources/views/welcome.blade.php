@@ -14,7 +14,7 @@
 
                         <div class="main-content">
                             <div class="main_content_inner">
-                                <div class="w-full max-w-xl m-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                                <div class="w-full max-w-2xl m-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                                     <form  action="{{ route('search.location') }}" method="post" class="">
                                         @csrf
                                         <div class="flex items-center border-b border-teal-500 py-2">
@@ -56,9 +56,19 @@
                                                     </div>
                                                     <div class="divider table mx-2 text-center bg-transparent whitespace-nowrap"><span class="inline-block px-3"><small>Forecast</small></span></div>
                                                     <div class="px-6 py-6 relative">
-                                                        <div class="text-center justify-between items-center flex" style="flex-flow: initial;">
+                                                        <div class="text-center">
                                                             @foreach($weeklyForecast as $weather )
-                                                                <div class="text-center mb-0 flex items-center justify-center flex-col"><span class="block my-1">{{(strtoupper(\Carbon\Carbon::createFromTimestamp($weather['dt'])->format('D')))}}</span><img src="http://openweathermap.org/img/wn/{{ $weather['weather'][0]['icon'] }}@2x.png" alt="icon"  class="block w-8 h-8"><span class="block my-1">{{$weather['weather'][0]['description']}}</span></div>
+                                                                <div class="text-center mb-0 wrapper">
+                                                                    <div class="text-center">
+                                                                        <span class="toggle my-1">{{(strtoupper(\Carbon\Carbon::createFromTimestamp($weather['dt'])->format('D')))}}</span>
+                                                                    </div>
+                                                                    <div class="content">
+                                                                        <div class="">
+                                                                            <img src="http://openweathermap.org/img/wn/{{ $weather['weather'][0]['icon'] }}@2x.png" alt="icon"  class="w-8 h-8">
+                                                                        </div>
+                                                                        <p class="my-1">{{$weather['weather'][0]['description']}}</p>
+                                                                    </div>
+                                                                </div>
                                                             @endforeach
                                                         </div>
                                                     </div>
