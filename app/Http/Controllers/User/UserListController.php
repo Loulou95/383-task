@@ -9,10 +9,8 @@ use Illuminate\Http\Request;
 
 class UserListController extends Controller
 {
-    use UserQuery;
-
     public function index() {
-          $userList =  User::where('is_admin', false)->get();
+        $userList = User::where('is_admin', false)->get();
         return view('user.user-list', ['userList' => $userList]);
     }
 }

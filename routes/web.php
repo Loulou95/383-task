@@ -16,10 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/home', function () {
-    return view('home');
-});
-
 
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['namespace' => 'Api'], function () {
