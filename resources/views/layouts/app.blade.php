@@ -24,7 +24,7 @@
 <body>
     <div id="app">
         <div class="p-10 flex flex-wrap justify-between items-center">
-            <h3>Weather</h3>
+            <a href="/" class="text-xl font-bold">Weather Task</a>
             <div class="dropdown inline-block relative">
                 <button class="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">
                     <span class="mr-1">Account</span>
